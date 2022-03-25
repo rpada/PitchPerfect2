@@ -79,20 +79,6 @@ class PlaySoundsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func initAllButtonPos() {
-            adjustButtonPos(snailButton)
-            adjustButtonPos(chipmunkButton)
-            adjustButtonPos(rabbitButton)
-            adjustButtonPos(vaderButton)
-            adjustButtonPos(echoButton)
-            adjustButtonPos(reverbButton)
-            adjustButtonPos(stopButton)
-        }
-        
-        func adjustButtonPos(_ button : UIButton){
-            button.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
-        }
 
 }
 
