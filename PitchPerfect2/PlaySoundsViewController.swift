@@ -10,19 +10,18 @@ import AVFoundation
 class PlaySoundsViewController: UIViewController {
     
     @IBOutlet weak var snailButton: UIButton!
-    func adjustButtonPos(){
-        snailButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
-    }
+  
     @IBOutlet weak var chipmunkButton: UIButton!
-    func adjustchipmunkPos(){
-        chipmunkButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
-    }
+   
     @IBOutlet weak var rabbitButton: UIButton!
+   
     @IBOutlet weak var vaderButton: UIButton!
+   
     @IBOutlet weak var echoButton: UIButton!
+   
     @IBOutlet weak var reverbButton: UIButton!
+  
     @IBOutlet weak var stopButton: UIButton!
-    
     
 
     var recordedAudioURL:URL!
@@ -80,5 +79,21 @@ class PlaySoundsViewController: UIViewController {
     }
     */
 
+    func setImageContentModes() {
+        snailButton.imageView?.contentMode = .scaleAspectFit
+        snailButton.contentMode = .center
+        rabbitButton.imageView?.contentMode = .scaleAspectFit
+        rabbitButton.contentMode = .center
+        chipmunkButton.imageView?.contentMode = .scaleAspectFit
+        chipmunkButton.contentMode = .center
+        vaderButton.imageView?.contentMode = .scaleAspectFit
+        vaderButton.contentMode = .center
+        echoButton.imageView?.contentMode = .scaleAspectFit
+        echoButton.contentMode = .center
+        reverbButton.imageView?.contentMode = .scaleAspectFit
+        reverbButton.contentMode = .center
+        stopButton.imageView?.contentMode = .scaleAspectFit
+        stopButton.contentMode = .center
+        }
 }
 
