@@ -2,7 +2,7 @@
 //  PlaySoundsViewController.swift
 //  PitchPerfect2
 //
-//  Created by Brenna Pada on 3/22/22.
+//  Created by Rianne Pada on 3/22/22.
 //
 
 import UIKit
@@ -14,7 +14,7 @@ class PlaySoundsViewController: UIViewController {
         snailButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
     }
     @IBOutlet weak var chipmunkButton: UIButton!
-    func adjustChipmunkPos(){
+    func adjustchipmunkPos(){
         chipmunkButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
     }
     @IBOutlet weak var rabbitButton: UIButton!

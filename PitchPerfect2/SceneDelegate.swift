@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  PitchPerfect2
 //
-//  Created by Brenna Pada on 3/15/22.
+//  Created by Rianne Pada on 3/15/22.
 //
 
 import UIKit
