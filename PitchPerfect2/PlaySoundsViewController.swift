@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 class PlaySoundsViewController: UIViewController {
-    
+    // defining buttons
     @IBOutlet weak var snailButton: UIButton!
   
     @IBOutlet weak var chipmunkButton: UIButton!
@@ -23,18 +23,19 @@ class PlaySoundsViewController: UIViewController {
   
     @IBOutlet weak var stopButton: UIButton!
     
-
+    // defining audio
     var recordedAudioURL:URL!
     var audioFile:AVAudioFile!
     var audioEngine:AVAudioEngine!
     var audioPlayerNode: AVAudioPlayerNode!
     var stopTimer: Timer!
 
+    // defining button sounds
     enum ButtonType: Int {
         case slow = 0, fast, chipmunk, vader, echo, reverb
     }
 
-    // MARK: Actions
+    // MARK: Actions for sounds
 
     @IBAction func playSoundForButton(_ sender: UIButton) {
         
@@ -57,7 +58,7 @@ class PlaySoundsViewController: UIViewController {
     }
 
     @IBAction func stopButtonPressed(_ sender: AnyObject) {
-        stopAudio()
+        stopAudio() // stops audio when pressed
     }
     
     override func viewDidLoad() {
@@ -66,34 +67,8 @@ class PlaySoundsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
-        configureUI(.notPlaying)
+        configureUI(.notPlaying) //appears when audio is not playing
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    func setImageContentModes() {
-        snailButton.imageView?.contentMode = .scaleAspectFit
-        snailButton.contentMode = .center
-        rabbitButton.imageView?.contentMode = .scaleAspectFit
-        rabbitButton.contentMode = .center
-        chipmunkButton.imageView?.contentMode = .scaleAspectFit
-        chipmunkButton.contentMode = .center
-        vaderButton.imageView?.contentMode = .scaleAspectFit
-        vaderButton.contentMode = .center
-        echoButton.imageView?.contentMode = .scaleAspectFit
-        echoButton.contentMode = .center
-        reverbButton.imageView?.contentMode = .scaleAspectFit
-        reverbButton.contentMode = .center
-        stopButton.imageView?.contentMode = .scaleAspectFit
-        stopButton.contentMode = .center
-        }
 }
 

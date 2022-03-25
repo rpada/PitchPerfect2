@@ -12,12 +12,11 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
     
     var audioRecorder: AVAudioRecorder!
 
+    // defining UI buttons
     @IBOutlet weak var recordingLabel: UILabel!
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
-    func adjustButtonPos(){
-        stopRecordingButton.imageView?.contentMode = UIView.ContentMode.scaleAspectFit;
-    }
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,13 +25,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print("viewWillAppear called")
     }
 
     @IBAction func recordAudio(_ sender: Any) {
         recordingLabel.text = "Recording in Progress"
-        recordButton.isEnabled = false
-        stopRecordingButton.isEnabled = true
+        recordButton.isEnabled = false // when recording, start button is off
+        stopRecordingButton.isEnabled = true // when recording, stop button is enabled
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
            let recordingName = "recordedVoice.wav"
