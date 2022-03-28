@@ -17,20 +17,24 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopRecordingButton: UIButton!
    
+    // referenced from https://stackoverflow.com/questions/45774896/how-can-i-remove-repetitive-code-in-swift
+    func configureUI(isRecording: Bool) {
+        recordButton.isEnabled = !isRecording
+        stopRecordingButton.isEnabled = isRecording
+       }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        stopRecordingButton.isEnabled = false
+        configureUI(isRecording: false)
         // Do any additional setup after loading the view.
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+   
 
     @IBAction func recordAudio(_ sender: Any) {
         recordingLabel.text = "Recording in Progress"
-        recordButton.isEnabled = false // when recording, start button is off
-        stopRecordingButton.isEnabled = true // when recording, stop button is enabled
+        configureUI(isRecording: true) // when recording, start button is off
+         // when recording, stop button is enabled
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
            let recordingName = "recordedVoice.wav"
@@ -50,8 +54,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate  {
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-        recordButton.isEnabled = true
-        stopRecordingButton.isEnabled = false
+        configureUI(isRecording: false)
         recordingLabel.text = "Tap to Record"
         audioRecorder.stop()
            let audioSession = AVAudioSession.sharedInstance()
